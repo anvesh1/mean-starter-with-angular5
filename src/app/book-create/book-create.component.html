@@ -1,0 +1,39 @@
+<div class="container">
+  <h1>Add your Book</h1>
+  <div class="row">
+    <div class="col-md-5">
+      <form (ngSubmit)="saveBook()" #bookForm="ngForm">
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <label for="name">ISBN</label>
+            <input type="text" class="form-control" [(ngModel)]="book.isbn" name="isbn" required>
+          </div>
+          <div class="col-md-6 form-group">
+            <label for="name">Title</label>
+            <input type="text" class="form-control" [(ngModel)]="book.title" name="title" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <label for="name">Author</label>
+            <input type="text" class="form-control" [(ngModel)]="book.author" name="author" required>
+          </div>
+          <div class="col-md-6 form-group">
+            <label for="name">Published Year</label>
+            <input type="number" class="form-control" [(ngModel)]="book.published_year" name="published_year" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <label for="name">Publisher</label>
+            <input type="text" class="form-control" [(ngModel)]="book.publisher" name="publisher" required>
+          </div>
+          <div class="col-md-6 form-group">
+            <br>
+            <button type="submit" class="btn btn-success save-button" [disabled]="!bookForm.form.valid">Save</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

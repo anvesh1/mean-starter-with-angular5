@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-5">
+      <div *ngIf="!isEdit">
+        <app-book-create></app-book-create>
+      </div>
+      <div *ngIf="isEdit">
+        <!--<app-book-edit></app-book-edit>-->
+      </div>
+
+      <!--
+      <h1>
+        Book List
+        <a [routerLink]="['/book-create']" class="btn btn-default btn-lg">
+          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        </a>
+      </h1>
+      -->
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-6">
+      <h1>Book List</h1>
+      <table class="table list-border">
+        <thead>
+        <tr>
+          <th>Title 1</th>
+          <th>Author</th>
+          <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let book of books">
+          <td>{{ book.title }}</td>
+          <td>{{ book.author }}</td>
+          <td>
+            <a [routerLink]="['/book-details', book._id]" class="btn btn-primary">View</a>
+            <a [routerLink]="['/book-edit', book._id]" class="btn btn-success">Edit</a>
+            <!--<button (click)="editBook(book)" class="btn btn-success">Edit</button>-->
+            <button class="btn btn-danger" type="button" (click)="deleteBook(book._id)">Delete</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

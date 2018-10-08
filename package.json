@@ -2,6 +2,7 @@
   "name": "mean-stack-with-ang5-mongo-express",
   "version": "0.0.0",
   "license": "MIT",
+  "description": "mean-stack-with-ang5-mongo-express",
   "scripts": {
     "ng": "ng",
     "prestart": "node ./api/bin/www &",
